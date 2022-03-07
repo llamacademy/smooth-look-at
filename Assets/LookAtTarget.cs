@@ -24,9 +24,10 @@ public class LookAtTarget : MonoBehaviour
 
         float time = 0;
 
+        Quaternion initialRotation = transform.rotation;
         while (time < 1)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, time);
+            transform.rotation = Quaternion.Slerp(initialRotation, lookRotation, time);
 
             time += Time.deltaTime * Speed;
 
